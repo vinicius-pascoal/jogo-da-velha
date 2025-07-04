@@ -11,6 +11,7 @@ export default function Jogo() {
   const [currentPlayer, setCurrentPlayer] = useState<"X" | "O">("X");
   const [winner, setWinner] = useState<Winner>(null);
 
+  //TODO adicionar salvar o score no local storage
   const winningCombos = [
     [0, 1, 2],
     [3, 4, 5],
