@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+import Jogo from "./Jogo";
 
 export default function Modal() {
   const [open, setOpen] = useState(false);
@@ -25,14 +26,11 @@ export default function Modal() {
             exit={{ opacity: 0 }}
           >
             {/* Backdrop com transparência real */}
-            <div
-              className="absolute inset-0 bg-[rgba(0,0,0,0.55)]"
-              
-            />
+            <div className="absolute inset-0 bg-[rgba(0,0,0,0.55)]" />
 
             {/* Modal em si */}
             <motion.div
-              className="relative z-10 w-[90%] max-w-md bg-white rounded-2xl shadow-xl p-6"
+              className="relative z-10  bg-gray-800 rounded-2xl shadow-xl p-6"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
@@ -41,15 +39,19 @@ export default function Modal() {
             >
               <div className="text-center">
                 <h1>
-                  <span className="text-2xl font-bold text-gray-800">
+                  <span className="text-2xl font-bold text-white">
                     Jogo da Velha
                   </span>
-                  <br />
-                  <span className="text-lg text-gray-700">
-                    Um jogo clássico para dois jogadores.
-                  </span>
                 </h1>
-                <button className=" text-red-500" onClick={() => setOpen(false)} >sair</button>
+                <div className="mt-4">
+                  <Jogo />
+                </div>
+                <button
+                  className="relative bottom-0 -right-1/3 mt-4 px-4 py-2 bg-red-500 font-semibold rounded text-black"
+                  onClick={() => setOpen(false)}
+                >
+                  sair
+                </button>
               </div>
             </motion.div>
           </motion.div>

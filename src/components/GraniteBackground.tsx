@@ -1,9 +1,11 @@
 import React from "react";
 
-import noise from "../img/noise.png"
+import noise from "../img/noise.png";
 import Image from "next/image";
 
-const GraniteBackground: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+const GraniteBackground: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-gray-400">
       {/* Textura granulada (pontos) */}
